@@ -1,5 +1,10 @@
 pipeline {
-  agent any
+  agent {
+    node {
+      label 'node'
+    }
+
+  }
   stages {
     stage('Build') {
       steps {
@@ -11,5 +16,8 @@ pipeline {
       }
     }
 
+  }
+  environment {
+    NODEJS_HOME = '${tool \'Node 14.4\'}'
   }
 }
