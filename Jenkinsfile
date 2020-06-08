@@ -4,7 +4,7 @@ pipeline {
     stage('Build') {
       steps {
         nodejs('Node 14.4') {
-          sh 'npm --version'
+          sh 'npm install'
         }
 
       }
